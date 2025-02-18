@@ -76,7 +76,7 @@ Editar
 CREATE DATABASE nombre_de_tu_base_de_datos;
 Nota: Este paso es crucial ya que la aplicación necesita una base de datos para almacenar los mensajes programados.
 
-3️⃣ Configurar las Variables de Entorno:
+3️⃣ **Configurar las Variables de Entorno:**
 Debes configurar las siguientes variables de entorno en tu sistema operativo antes de ejecutar el programa:
 
 En Windows:
