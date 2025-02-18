@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del Mensaje</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold mb-6">Detalle del Mensaje</h1>
+
+        <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+            <p><strong>Canal:</strong> <span th:text="${mensaje.canal}"></span></p>
+            <p><strong>Mensaje:</strong> <span th:text="${mensaje.texto}"></span></p>
+            <p><strong>Fecha y Hora de envio:</strong> <span th:text="${mensaje.fechaEnvio}"></span></p>
+        </div>
+
+        <div class="mt-4">
+            <a href="/" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                Volver a la lista
+            </a>
+        </div>
+    </div>
+</body>
+</html>

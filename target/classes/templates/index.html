@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Programar Mensaje</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+
+	<style>
+		.truncate-text {
+			max-width: 600px;
+			/* Ajusta el ancho máximo del texto */
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	</style>
+
+
+</head>
+
+<body class="bg-gray-900 text-white">
+	<div class="container mx-auto p-6">
+
+		<h1 class="text-3xl font-bold mb-6">Mensajes Programados</h1>
+
+		<!-- Botón para crear un nuevo mensaje -->
+		<div class="mb-4">
+			<a href="/programarMensaje" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+				Crear Nuevo Mensaje
+			</a>
+		</div>
+
+		<table class="min-w-full bg-gray-800 rounded-lg shadow-md">
+			<thead>
+				<tr>
+					<th class="px-4 py-2 text-left">Canal</th>
+					<th class="px-4 py-2 text-left">Mensaje</th>
+					<th class="px-4 py-2 text-left">Fecha y Hora</th>
+					<th class="px-4 py-2 text-left">Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="mensaje : ${mensajesProgramados}">
+					<td class="px-4 py-2" th:text="${mensaje.canal}"></td>
+					<td class="px-4 py-2 truncate-text" th:text="${mensaje.texto}"></td>
+					<td class="px-4 py-2" th:text="${mensaje.fechaEnvio}"></td>
+					<td class="px-4 py-2">
+
+						<a th:href="@{/verMensaje/{id}(id=${mensaje.id})}"
+							class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-3 rounded">
+							Ver
+						</a>
+						
+						<form th:action="@{/eliminarMensaje}" method="post" class="inline">
+							<input type="hidden" name="id" th:value="${mensaje.id}" />
+							<button type="submit"
+								class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+								Eliminar
+							</button>
+						</form>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+
+	</div>
+</body>
+
+</html>

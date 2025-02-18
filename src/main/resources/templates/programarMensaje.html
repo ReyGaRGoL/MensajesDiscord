@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Programar Mensaje</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+	
+	
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="container mx-auto p-6">
+
+				<h1 class="text-3xl font-bold mb-6">Programar un Mensaje</h1>
+		
+        <!-- Selección de Servidor -->
+        <form method="get" action="/programarMensaje" class="mb-4">
+            <label class="block text-sm font-medium">Selecciona un Servidor</label>
+            <select name="serverId" onchange="this.form.submit()" class="w-full p-2 rounded bg-gray-800 text-white mt-2">
+                <option value="">-- Selecciona un servidor --</option>
+                <option th:each="server : ${servers}" 
+                        th:value="${server.id}" 
+                        th:text="${server.name}" 
+                        th:selected="${server.id == selectedServerId}">
+                </option>
+            </select>
+        </form>
+
+        <!-- Formulario de Programación de Mensaje -->
+        <form th:action="@{/procesarEnvio}" method="post" class="bg-gray-800 p-4 rounded-lg shadow-md">
+            <input type="hidden" name="serverId" th:value="${selectedServerId}">
+
+            <label class="block text-sm font-medium mt-4">Selecciona un Canal</label>
+            <select name="canal" class="w-full p-2 rounded bg-gray-800 text-white mt-2" required>
+                <option value="">-- Selecciona un canal --</option>
+                <option th:each="channel : ${channels}" 
+                        th:value="${channel.id}" 
+                        th:text="${channel.name}">
+                </option>
+            </select>
+
+            <label class="block text-sm font-medium mt-4">Mensaje</label>
+            <textarea name="texto" placeholder="Escribe un mensaje..." class="w-full p-2 rounded bg-gray-800 text-white mt-2" required></textarea>
+
+			<label class="block text-sm font-medium mt-4">Fecha y Hora</label>
+			<input type="datetime-local" name="fechaEnvio" class="w-full p-2 rounded bg-gray-800 text-white mt-2" 
+			       th:value="${fechaActual}" th:min="${fechaActual}" required>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4">Programar</button>
+        </form>
+    </div>
+</body>
+</html>
