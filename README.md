@@ -66,41 +66,40 @@ git clone https://github.com/tu-usuario/tu-repositorio.git
 ```
 
 2️⃣ **Configurar la Base de Datos:**
---Asegúrate de que PostgreSQL esté instalado y en ejecución.
+-Asegúrate de que PostgreSQL esté instalado y en ejecución.
 
---Crea una base de datos para el proyecto en PostgreSQL. Puedes hacerlo con el siguiente comando (ajustando el nombre de la base de datos):
+-Crea una base de datos para el proyecto en PostgreSQL. Puedes hacerlo con el siguiente comando (ajustando el nombre de la base de datos):
 
---sql
---Copiar
---Editar
---CREATE DATABASE nombre_de_tu_base_de_datos;
+-sql
+-Copiar
+-Editar
+-CREATE DATABASE nombre_de_tu_base_de_datos;
 **Nota:** Este paso es crucial ya que la aplicación necesita una base de datos para almacenar los mensajes programados.
 
 3️⃣ **Configurar las Variables de Entorno:**
---Debes configurar las siguientes variables de entorno en tu sistema operativo antes de ejecutar el programa:
+-Debes configurar las siguientes variables de entorno en tu sistema operativo antes de ejecutar el programa:
 
---En Windows:
+-En Windows:
 
---Abre el menú de inicio y busca "Variables de entorno".
---En la sección de variables de usuario, agrega las siguientes variables:
---DB_NAME: Nombre de la base de datos en PostgreSQL.
---DB_USER: Usuario de la base de datos.
---DB_PASSWORD: Contraseña de la base de datos.
---BOT_TOKEN: Token del bot de Discord.
+-Abre el menú de inicio y busca "Variables de entorno".
+-En la sección de variables de usuario, agrega las siguientes variables:
+-DB_NAME: Nombre de la base de datos en PostgreSQL.
+-DB_USER: Usuario de la base de datos.
+-DB_PASSWORD: Contraseña de la base de datos.
+-BOT_TOKEN: Token del bot de Discord.
 En Linux/Mac:
 
 -Abre una terminal y ejecuta:
 
-bash
-Copiar
-Editar
+```bash
 export DB_NAME=nombre_de_tu_base_de_datos
 export DB_USER=tu_usuario
 export DB_PASSWORD=tu_contraseña
 export BOT_TOKEN=tu_token_de_discord
-Para hacer permanentes los cambios, agrega estas líneas al archivo ~/.bashrc o ~/.zshrc (dependiendo del shell que uses).
+```
+-Para hacer permanentes los cambios, agrega estas líneas al archivo ~/.bashrc o ~/.zshrc (dependiendo del shell que uses).
 
-Asegúrate de que las variables estén correctamente configuradas antes de continuar. Esto es esencial para que la aplicación pueda acceder a la base de datos y al bot de Discord.
+-Asegúrate de que las variables estén correctamente configuradas antes de continuar. Esto es esencial para que la aplicación pueda acceder a la base de datos y al bot de Discord.
 
 
 
@@ -115,27 +114,27 @@ mvn spring-boot:run
 
 - **Acceder a la interfaz web**
 
-Abre un navegador y accede a:
+-Abre un navegador y accede a:
 
 ```
 http://localhost:8080
 ```
 
-Aquí podrás visualizar los mensajes programados y gestionar su envío.
+-Aquí podrás visualizar los mensajes programados y gestionar su envío.
 
 - **Consultar la documentación de la API**
 
-Swagger genera documentación interactiva para la API en:
+-Swagger genera documentación interactiva para la API en:
 
 ```
 http://localhost:8080/swagger-ui.html
 ```
 
-Aquí puedes probar las rutas y ver detalles sobre los endpoints disponibles.
+-Aquí puedes probar las rutas y ver detalles sobre los endpoints disponibles.
 
 - **Programar un mensaje mediante API**
 
-Usa una herramienta como Postman o cURL para hacer una solicitud `POST` a la API con el contenido del mensaje y la fecha/hora de envío.
+-Usa una herramienta como Postman o cURL para hacer una solicitud `POST` a la API con el contenido del mensaje y la fecha/hora de envío.
 
 ---
 
