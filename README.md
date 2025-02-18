@@ -65,38 +65,33 @@ Antes de ejecutar el proyecto, asegúrate de tener:
 git clone https://github.com/tu-usuario/tu-repositorio.git
 ```
 
-2️⃣ Configurar las variables de entorno en el sistema:
+2️⃣ **Configurar las variables de entorno en el sistema:**
 
-En Windows:
+- En **Windows**:
 
-Abre el menú de inicio y busca "Variables de entorno".
+  - Abre el menú de inicio y busca "Variables de entorno".
+  - En la sección de variables de usuario, agrega las siguientes variables:
+    - `DB_NAME`: Nombre de la base de datos en PostgreSQL.
+    - `DB_USER`: Usuario de la base de datos.
+    - `DB_PASSWORD`: Contraseña de la base de datos.
+    - `BOT_TOKEN`: Token del bot de Discord.
 
-En la sección de variables de usuario, agrega las siguientes variables:
+- En **Linux/Mac**:
 
-DB_NAME: Nombre de la base de datos en PostgreSQL.
+  - Abre una terminal y ejecuta:
 
-DB_USER: Usuario de la base de datos.
+  ```bash
+  export DB_NAME=tu_nombre_de_base_de_datos
+  export DB_USER=tu_usuario
+  export DB_PASSWORD=tu_contraseña
+  export BOT_TOKEN=tu_token_de_discord
+  ```
 
-DB_PASSWORD: Contraseña de la base de datos.
+  - Para hacer permanentes los cambios, agrégalo al archivo `~/.bashrc` o `~/.zshrc`.
 
-BOT_TOKEN: Token del bot de Discord.
-
-En Linux/Mac:
-
-Abre una terminal y ejecuta:
-
-export DB_NAME=tu_nombre_de_base_de_datos
-export DB_USER=tu_usuario
-export DB_PASSWORD=tu_contraseña
-export BOT_TOKEN=tu_token_de_discord
-
-Para hacer permanentes los cambios, agrégalo al archivo ~/.bashrc o ~/.zshrc.
-
-3️⃣ Configurar la base de datos:
+3️⃣ **Configurar la base de datos:**
 
 Asegúrate de que PostgreSQL está en ejecución y que tienes creada la base de datos con el nombre que configuraste en las variables de entorno.
-
-4️⃣ Compilar y ejecutar la API:
 
 4️⃣ **Compilar y ejecutar la API:**
 
@@ -109,27 +104,27 @@ mvn spring-boot:run
 
 - **Acceder a la interfaz web**
 
--Abre un navegador y accede a:
+Abre un navegador y accede a:
 
 ```
 http://localhost:8080
 ```
 
--Aquí podrás visualizar los mensajes programados y gestionar su envío.
+Aquí podrás visualizar los mensajes programados y gestionar su envío.
 
 - **Consultar la documentación de la API**
 
--Swagger genera documentación interactiva para la API en:
+Swagger genera documentación interactiva para la API en:
 
 ```
 http://localhost:8080/swagger-ui.html
 ```
 
--Aquí puedes probar las rutas y ver detalles sobre los endpoints disponibles.
+Aquí puedes probar las rutas y ver detalles sobre los endpoints disponibles.
 
 - **Programar un mensaje mediante API**
 
--Usa una herramienta como Postman o cURL para hacer una solicitud `POST` a la API con el contenido del mensaje y la fecha/hora de envío.
+Usa una herramienta como Postman o cURL para hacer una solicitud `POST` a la API con el contenido del mensaje y la fecha/hora de envío.
 
 ---
 
