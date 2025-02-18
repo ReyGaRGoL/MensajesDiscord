@@ -65,43 +65,38 @@ Antes de ejecutar el proyecto, asegúrate de tener:
 git clone https://github.com/tu-usuario/tu-repositorio.git
 ```
 
-2️⃣ **Configurar la Base de Datos:**
-- Asegúrate de que PostgreSQL esté instalado y en ejecución.
+2️⃣ Configurar las variables de entorno en el sistema:
 
-- Crea una base de datos para el proyecto en PostgreSQL. Puedes hacerlo con el siguiente comando (ajustando el nombre de la base de datos):
+En Windows:
 
-- sql
-- Copiar
-- Editar
-- CREATE DATABASE nombre_de_tu_base_de_datos;
-- **Nota:** Este paso es crucial ya que la aplicación necesita una base de datos para almacenar los mensajes programados.
+Abre el menú de inicio y busca "Variables de entorno".
 
-3️⃣ **Configurar las Variables de Entorno:**
-- Debes configurar las siguientes variables de entorno en tu sistema operativo antes de ejecutar el programa:
+En la sección de variables de usuario, agrega las siguientes variables:
 
-- En Windows:
+DB_NAME: Nombre de la base de datos en PostgreSQL.
 
-- Abre el menú de inicio y busca "Variables de entorno".
-- En la sección de variables de usuario, agrega las siguientes variables:
-- DB_NAME: Nombre de la base de datos en PostgreSQL.
-- DB_USER: Usuario de la base de datos.
-- DB_PASSWORD: Contraseña de la base de datos.
-- BOT_TOKEN: Token del bot de Discord.
+DB_USER: Usuario de la base de datos.
+
+DB_PASSWORD: Contraseña de la base de datos.
+
+BOT_TOKEN: Token del bot de Discord.
+
 En Linux/Mac:
 
-- Abre una terminal y ejecuta:
+Abre una terminal y ejecuta:
 
-```bash
-export DB_NAME=nombre_de_tu_base_de_datos
+export DB_NAME=tu_nombre_de_base_de_datos
 export DB_USER=tu_usuario
 export DB_PASSWORD=tu_contraseña
 export BOT_TOKEN=tu_token_de_discord
-```
-- Para hacer permanentes los cambios, agrega estas líneas al archivo ~/.bashrc o ~/.zshrc (dependiendo del shell que uses).
 
-- Asegúrate de que las variables estén correctamente configuradas antes de continuar. Esto es esencial para que la aplicación pueda acceder a la base de datos y al bot de Discord.
+Para hacer permanentes los cambios, agrégalo al archivo ~/.bashrc o ~/.zshrc.
 
+3️⃣ Configurar la base de datos:
 
+Asegúrate de que PostgreSQL está en ejecución y que tienes creada la base de datos con el nombre que configuraste en las variables de entorno.
+
+4️⃣ Compilar y ejecutar la API:
 
 4️⃣ **Compilar y ejecutar la API:**
 
