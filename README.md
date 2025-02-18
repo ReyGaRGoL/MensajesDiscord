@@ -66,30 +66,30 @@ git clone https://github.com/tu-usuario/tu-repositorio.git
 ```
 
 2️⃣ **Configurar la Base de Datos:**
-Asegúrate de que PostgreSQL esté instalado y en ejecución.
+--Asegúrate de que PostgreSQL esté instalado y en ejecución.
 
-Crea una base de datos para el proyecto en PostgreSQL. Puedes hacerlo con el siguiente comando (ajustando el nombre de la base de datos):
+--Crea una base de datos para el proyecto en PostgreSQL. Puedes hacerlo con el siguiente comando (ajustando el nombre de la base de datos):
 
-sql
-Copiar
-Editar
-CREATE DATABASE nombre_de_tu_base_de_datos;
-Nota: Este paso es crucial ya que la aplicación necesita una base de datos para almacenar los mensajes programados.
+--sql
+--Copiar
+--Editar
+--CREATE DATABASE nombre_de_tu_base_de_datos;
+**Nota:** Este paso es crucial ya que la aplicación necesita una base de datos para almacenar los mensajes programados.
 
 3️⃣ **Configurar las Variables de Entorno:**
-Debes configurar las siguientes variables de entorno en tu sistema operativo antes de ejecutar el programa:
+--Debes configurar las siguientes variables de entorno en tu sistema operativo antes de ejecutar el programa:
 
-En Windows:
+--En Windows:
 
-Abre el menú de inicio y busca "Variables de entorno".
-En la sección de variables de usuario, agrega las siguientes variables:
-DB_NAME: Nombre de la base de datos en PostgreSQL.
-DB_USER: Usuario de la base de datos.
-DB_PASSWORD: Contraseña de la base de datos.
-BOT_TOKEN: Token del bot de Discord.
+--Abre el menú de inicio y busca "Variables de entorno".
+--En la sección de variables de usuario, agrega las siguientes variables:
+--DB_NAME: Nombre de la base de datos en PostgreSQL.
+--DB_USER: Usuario de la base de datos.
+--DB_PASSWORD: Contraseña de la base de datos.
+--BOT_TOKEN: Token del bot de Discord.
 En Linux/Mac:
 
-Abre una terminal y ejecuta:
+-Abre una terminal y ejecuta:
 
 bash
 Copiar
